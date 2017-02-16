@@ -1,0 +1,85 @@
+html {
+  height: 100%;
+}
+body {
+  font-family: 'open sans', 'Microsoft YaHei';
+  font-size: 14px;
+  height: 100%;
+  overflow: hidden;
+  background: #eee;
+}
+.navbar {
+  position: relative;
+  margin-bottom: 0;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o--border-radisu: 0;
+}
+.navbar .navbar-header {
+  margin-right: 100px;
+}
+.navbar #toggle-aside {
+  position: absolute;
+  top: 50%;
+  font-size: 24px;
+  color: #fff;
+  transform: translateY(-50%);
+}
+.navbar .select-con {
+  display: inline-block;
+  margin-left: 100px;
+  padding-top: 12px;
+  color: #fff;
+}
+.navbar .select-con select {
+  width: 150px;
+  height: 22px;
+  margin-left: 10px;
+  background: #ccc;
+}
+.content-wrap {
+  position: relative;
+  height: 100%;
+  color: #fff;
+}
+.content-wrap aside {
+  width: 240px;
+  height: 100%;
+  background: black;
+}
+.content-wrap aside .title {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 16px;
+}
+.content-wrap aside .panel {
+  background: black;
+  color: #fff;
+}
+.content-wrap aside .panel .panel-heading {
+  padding: 0;
+}
+.content-wrap aside .panel .panel-heading a {
+  display: inline-block;
+  width: 100%;
+  padding-left: 20px;
+  color: #fff;
+}
+.content-wrap aside .panel .panel-heading a span {
+  padding-right: 10px;
+}
+.content-wrap aside .panel .item {
+  padding: 0;
+}
+.content-wrap aside .panel .item li {
+  height: 36px;
+  line-height: 36px;
+}
+.content-wrap aside .panel .item li a {
+  display: inline-block;
+  padding-left: 40px;
+  width: 100%;
+  color: #fff;
+}

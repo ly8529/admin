@@ -1,0 +1,112 @@
+html {
+  height: 100%;
+}
+body {
+  font-family: 'open sans', 'Microsoft YaHei';
+  font-size: 14px;
+  height: 100%;
+  overflow: hidden;
+  background: #eee;
+}
+.navbar {
+  position: relative;
+  margin-bottom: 0;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o--border-radisu: 0;
+}
+.navbar .navbar-header {
+  margin-right: 100px;
+}
+.navbar #toggle-aside {
+  position: absolute;
+  top: 50%;
+  font-size: 24px;
+  color: #fff;
+  transform: translateY(-50%);
+}
+.navbar .select-con {
+  display: inline-block;
+  margin-left: 100px;
+  padding-top: 12px;
+  color: #fff;
+}
+.navbar .select-con select {
+  width: 150px;
+  height: 22px;
+  margin-left: 10px;
+  background: #ccc;
+}
+.content-wrap {
+  height: 100%;
+}
+.content-wrap aside {
+  width: 240px;
+  height: 100%;
+  background: black;
+  overflow-y: auto;
+}
+.content-wrap aside .area-select {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+.content-wrap aside .area-select a {
+  color: #fff;
+}
+.content-wrap aside .area-select ul.dropdown-menu {
+  min-width: 220px;
+  left: 10px;
+  padding: 0;
+}
+.content-wrap aside .area-select ul.dropdown-menu li {
+  padding-left: 15px;
+  text-align: left;
+}
+.content-wrap aside .area-select ul.dropdown-menu li:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.content-wrap aside .area-select ul.dropdown-menu li:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.content-wrap aside .area-select ul.dropdown-menu li:hover {
+  background: #eee;
+}
+.content-wrap aside .title {
+  font-size: 18px;
+  color: #fff;
+  padding: 10px 20px;
+}
+.content-wrap aside .list-group {
+  background: black;
+}
+.content-wrap aside .list-group li.list-group-item {
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 0;
+  border: 0;
+  padding: 0;
+}
+.content-wrap aside .list-group li.list-group-item .item a {
+  display: inline-block;
+  width: 100%;
+  color: #fff;
+  background: #2b2b38;
+  padding: 8px 20px;
+}
+.content-wrap aside .list-group li.list-group-item .item span {
+  padding-right: 10px;
+}
+.content-wrap aside .list-group li.list-group-item .text {
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+  background: #2b2b38;
+  color: #fff;
+  cursor: pointer;
+}

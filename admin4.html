@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>仿青云后台</title>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./css/admin4.css">
+	<script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<!--[if lt IE9]> 
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script></script>
+</head>
+<body>
+<!-- 头部导航Start -->
+<nav class="navbar navbar-inverse" role="navigation">
+   <div class="navbar-header">
+    	<a class="navbar-brand" href="#">Factminr</a>
+   </div>
+   <span id="toggle-aside" class="glyphicon glyphicon-list"></span>
+   <div class="select-con">
+		<span>欢迎来到管理台</span>
+		<select>
+			<option>1111</option>
+			<option>2222</option>
+			<option>3333</option>
+			<option>4444</option>
+			<option>5555</option>
+		</select>
+   </div>
+   <div class="pull-right">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">demo1</a></li>
+        <li><a href="#">demo2</a></li>
+        <li><a href="#">demo3</a></li>
+      </ul>
+   </div> 
+</nav>
+<!-- 头部导航End -->
+<section class="content-wrap test">
+	<!-- 侧边栏Start -->
+	<aside id="collapse_aside">
+		<h2 class="title"><span class="glyphicon glyphicon-tag"></span><span class="hide">factminr管理台</span></h2>
+		<div class="item-list" id="item-list">
+			<div class="item">
+				    <a href="#" class="collapse-title">
+				      <span class="glyphicon glyphicon-tag"></span><span class="hide">第 1 部分</span>
+				    </a>
+				    <ul class="item-content">
+						<li><a href="">1111</a></li>
+						<li><a href="">2222</a></li>
+						<li><a href="">3333</a></li>
+						<li><a href="">4444</a></li>
+					</ul>
+			</div>
+			<div class="item">
+				    <a href="#" class="collapse-title">
+				      <span class="glyphicon glyphicon-tag"></span><span class="hide">第 2 部分</span> 
+				    </a>
+				    <ul class="item-content">
+						<li><a href="">1111</a></li>
+						<li><a href="">2222</a></li>
+						<li><a href="">3333</a></li>
+						<li><a href="">4444</a></li>
+					</ul>
+			</div>
+			<div class="item">
+				    <a href="#" class="collapse-title">
+				      <span class="glyphicon glyphicon-tag"></span><span class="hide">第 3 部分</span>
+				    </a>
+				    <ul class="item-content">
+						<li><a href="">1111</a></li>
+						<li><a href="">2222</a></li>
+						<li><a href="">3333</a></li>
+						<li><a href="">4444</a></li>
+					</ul>
+			</div>
+		</div>
+	</aside>
+	<!-- 侧边栏End -->
+	<!-- 主题内容Start -->
+	<section class="content">
+		
+	</section>
+	<!-- 主题内容End -->
+</section>
+
+<!-- 底部Start -->
+<!-- 底部End -->
+<script type="text/javascript">
+	$(function(){
+		$('.item .collapse-title').click(function(){
+			$(this).parent().find('ul').show();
+			$(this).parent().siblings().find('ul').hide();
+		});
+		$('.item .collapse-title').hover(function(){
+			$(this).parent().find('ul').show();
+			$(this).parent().siblings().find('ul').hide();
+		})
+	})
+</script>
+</body>
+</html>

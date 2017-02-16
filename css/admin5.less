@@ -1,0 +1,312 @@
+html{
+    height: 100%;
+}
+body{
+    font-family: 'open sans','Microsoft YaHei';
+    font-size: 14px;
+    height: 100%;
+    padding-top: 50px;
+    background: #eee;
+    position: relative;
+}
+.mb10{
+    margin-bottom: 10px;
+}
+.pr0{
+    padding-right: 0;
+}
+.pl10{
+    padding-left: 10px;
+}
+//遮罩
+.wait{
+    display: none;
+    position: fixed; 
+    width: 100%; 
+    height: 100%; 
+    opacity: .2; 
+    background-color: #222; 
+    z-index: 10000;
+    #div_loading{
+        position: fixed; 
+        z-index: 11; 
+        top: 419px; 
+        left: 892px;
+    }
+}
+//导航栏的样式
+.navbar{
+    height: 50px;
+    margin-bottom: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o--border-radisu: 0;
+    .navbar-header{
+        width: 226px;
+    }
+    .navbar-header.toggle{
+        margin-right:0;
+    }
+    #toggle-aside{
+        position: absolute;
+        top: 12px;
+        left: 173px;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+    }
+    .select-con{
+        padding-top: 16px;
+        color: #fff;
+    }
+    .nav{
+        margin:0;
+        li{
+            height: 50px;
+            float: left;
+            a{
+                height: 50px;
+                padding-top: 13px;
+            }
+        }
+    }
+}
+//没有收缩时的样式
+.content-wrap{
+    position: relative;
+    height: 100%;
+    aside{
+        position: fixed;
+        float: left;
+        width: 166px;
+        height: 100%;
+        background: black;
+        padding-top: 30px;
+        z-index:1; 
+        .title{
+            padding-left: 10px;
+            height: 30px;
+            line-height: 10px;
+            span{
+                padding-left: 10px;
+            }
+        }
+        .item-list{
+            position: relative;
+            background: black;
+            color: #fff;
+            .item{
+                .collapse-title{
+                    display: inline-block;
+                    width: 100%;
+                    height: 36px;
+                    line-height: 36px;
+                    color: #fff;
+                    padding-left: 10px;
+                    span{
+                        padding-left: 10px;
+                    }
+                }
+                ul{
+                    display: none;
+                    li{
+                        a{
+                            display: inline-block;
+                            width: 100%;
+                            padding-left: 40px;
+                        }
+                    }    
+                } 
+            }   
+        }   
+    }
+}
+////收缩之后的样式
+.content-wrap.test{
+    position: relative;
+    height: 100%;
+    .hide-self{
+        display: none;
+    }
+    aside{
+        width: 60px;
+        height: 100%;
+        background: black;
+        padding-top: 30px; 
+        .title{
+            padding-left: 10px;
+            height: 30px;
+            line-height: 10px;
+            span{
+                padding-left: 10px;
+            }
+        }
+        .item-list{
+            background: black;
+            color: #fff;
+            .item{
+                position: relative;
+                .collapse-title{
+                    display: inline-block;
+                    width: 100%;
+                    height: 36px;
+                    line-height: 36px;
+                    color: #fff;
+                    padding-left: 10px;
+                    span{
+                        padding-left: 10px;
+                    }
+                }
+                .collapse-title:hover{
+                    background: #2b2b38;
+                }
+                .item-content{
+                    position: absolute;
+                    display: none;
+                    width:160px;
+                    top: 0;
+                    left: 60px;
+                    background: #2b2b38;
+                    z-index: 11;
+                    li{
+                        a{
+                            display: inline-block;
+                            width: 100%;
+                            padding-left: 40px;
+                        }
+                    } 
+                } 
+            }  
+        }   
+    }
+}
+.content.test{
+    padding-left: 60px;
+}
+.content{
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    height: 100%;
+    padding-left: 166px;
+    background: #272822;
+    overflow-y:auto;
+    .topbar{
+        .breadcrumb{
+            border-radius: 0;
+        }
+    }
+    .main{
+        width: 100%;
+        height: 100%;
+        .content-left{
+            float: left;
+            width: 70%;
+            height: 100%;
+            form{
+                box-sizing: border-box;
+                padding: 10px;
+                margin-right: 0;
+                background: #eee;
+                .extend{
+                    input{
+                        display: inline-block;
+                    }
+                    span{
+                        display: inline-block;
+                        margin-left: 10px;
+                        margin-top: 6px;
+                    }
+                }
+                .filter-button{
+                    width: 50%;
+                }
+            }
+        }
+        .content-right{
+            float: left;
+            width: 30%;
+            height: 100%;
+        }
+    }
+}
+.news-content{
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    background: #eee;
+    .news-info{
+        li{
+            height: 30px;
+            line-height: 30px;
+            padding-left: 20px;
+            .time{
+                float: right;
+                padding-right: 20px;
+            }
+        }
+        li:nth-child(even){
+            background: #d9d9d9;
+        }
+    }
+}
+.content-right{
+    .div_stat{
+        position: fixed;
+        margin-left: 15px;
+        .trs{
+            border-radius: 0;
+            margin-bottom: 10px;
+            .panel-heading{
+                padding: 15px 10px;
+                background: #f2f2f2;
+                span{
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+                div{
+                    margin-top: -6px;
+                }
+            }
+            .filter-container{
+                display: none;
+                padding: 6px 5px 10px 5px;
+            }
+        }
+        .nav-tabs{
+            background-color: #f2f2f2;
+            border-radius: 0;
+            .tablist{
+                border-radius: 0;
+            }
+        }
+        .tab-content{
+            .tab-pane{
+                border-radius: 0;
+                border: none;
+                .panel{
+                    border: none;
+                    .pbody{
+                        max-height: 500px;
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                        .filter{
+                            border-radius: 0;
+                            border: none;
+                        }  
+                    }
+                    .trsfooter{
+                        padding-top: 8px;
+                        height: 50px;
+                        text-align: center;
+                        .pagination{
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

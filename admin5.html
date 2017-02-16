@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>仿青云后台</title>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./css/admin5.css">
+	<script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<!--[if lte IE 9]>
+		<script src="./js/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<!-- 遮罩 -->
+<div id="mask" class="wait">
+    <div id="div_loading">
+        <img src="./img/load.gif">
+    </div>
+    <script>
+        $("#div_loading").css("top", (window.innerHeight / 2 - 68) + "px");
+        $("#div_loading").css("left", (window.innerWidth / 2 - 68) + "px");
+    </script>
+</div>
+<!-- 头部导航Start -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="navbar-header fl">
+    	<a class="navbar-brand" href="#">Factminr</a>
+   </div>
+   <div class="fl">
+   		<span id="toggle-aside" class="glyphicon glyphicon-list"></span>
+   </div>
+   <div class="select-con fl">
+		<span>欢迎来到管理台</span>
+   </div>
+   <!-- <div class="pull-right">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">demo1</a></li>
+        <li><a href="#">demo2</a></li>
+        <li><a href="#">demo3</a></li>
+      </ul>
+   </div> -->
+</nav> 
+<!-- 头部导航End -->
+<section class="content-wrap">
+	<!-- 侧边栏Start -->
+	<aside id="collapse_aside">
+		<h2 class="title"><span class="glyphicon glyphicon-tag"></span><span class="hide-self">factminr管理台</span></h2>
+		<div class="item-list" id="item-list">
+			<div class="item">
+				    <a href="#" class="collapse-title">
+				      <span class="glyphicon glyphicon-tag"></span><span class="hide-self">沪深</span>
+				    </a>
+				    <ul class="item-content">
+						<li><a href="">1111</a></li>
+						<li><a href="">2222</a></li>
+						<li><a href="">3333</a></li>
+						<li><a href="">4444</a></li>
+					</ul>
+			</div>
+			<div class="item">
+				    <a href="#" class="collapse-title">
+				      <span class="glyphicon glyphicon-tag"></span><span class="hide-self">新三板</span>
+				    </a>
+				    <ul class="item-content">
+						<li><a href="">1111</a></li>
+						<li><a href="">2222</a></li>
+						<li><a href="">3333</a></li>
+						<li><a href="">4444</a></li>
+					</ul>
+			</div>
+			<div class="item">
+				    <a href="#" class="collapse-title">
+				      <span class="glyphicon glyphicon-tag"></span><span class="hide-self">美股</span>
+				    </a>
+				    <ul class="item-content">
+						<li><a href="">1111</a></li>
+						<li><a href="">2222</a></li>
+						<li><a href="">3333</a></li>
+						<li><a href="">4444</a></li>
+					</ul>
+			</div>
+			<div class="item">
+				    <a href="#" class="collapse-title">
+				      <span class="glyphicon glyphicon-tag"></span><span class="hide-self">互动平台</span>
+				    </a>
+				    <ul class="item-content">
+						<li><a href="">1111</a></li>
+						<li><a href="">2222</a></li>
+						<li><a href="">3333</a></li>
+						<li><a href="">4444</a></li>
+					</ul>
+			</div>
+			<div class="item">
+				    <a href="#" class="collapse-title">
+				      <span class="glyphicon glyphicon-tag"></span><span class="hide-self">法规</span>
+				    </a>
+				    <ul class="item-content">
+						<li><a href="">1111</a></li>
+						<li><a href="">2222</a></li>
+						<li><a href="">3333</a></li>
+						<li><a href="">4444</a></li>
+					</ul>
+			</div>
+			<div class="item">
+				    <a href="#" class="collapse-title">
+				      <span class="glyphicon glyphicon-tag"></span><span class="hide-self">帮助</span>
+				    </a>
+				    <ul class="item-content">
+						<li><a href="">1111</a></li>
+						<li><a href="">2222</a></li>
+						<li><a href="">3333</a></li>
+						<li><a href="">4444</a></li>
+					</ul>
+			</div>
+		</div>
+		</div>
+	</aside>
+	<!-- 侧边栏End -->
+	<!-- 主题内容Start -->
+	<div class="content">
+		<div class="topbar">
+			<ol class="breadcrumb">
+				<li><a href="#">沪深</a></li>
+				<li><a href="#">1111</a></li>
+			</ol>
+		</div>
+		<div class="main">
+			<div class="content-left">
+				<form action="" class="row" autocomplete="off">
+					<div class="col-xs-2 pr0">
+						<div class="input-group mb10">
+	                        <input name="c" id="input_stockcode" type="text" class="form-control code" placeholder="公司代码/简称" data-provide="typeahead">
+	                    </div>
+	                    <div>
+                            <a id="btn_market" class="btn btn-danger form-control dropdown-toggle" data-toggle="dropdown">全部市场类型<span class="caret"></span></a>
+                            <ul id="ul_markets" class="dropdown-menu">
+	                            <li><a href="javascript:void(0)">全部市场类型</a></li>
+	                            <li><a href="javascript:void(0)">沪市主板</a></li>
+	                            <li><a href="javascript:void(0)">深市主板</a></li>
+	                            <li><a href="javascript:void(0)">深市中小板</a></li>
+	                            <li><a href="javascript:void(0)">深市创业板</a></li>
+	                            <li><a href="javascript:void(0)">深市全部</a></li>
+	                            <li><a href="javascript:void(0)">深市主板和中小板</a></li>
+                            </ul>
+                        </div>
+					</div>
+					<div class="col-xs-8 pr0">
+						<div id="div_single" class="input-group mb10" style="display: none;">
+                            <span class="input-group-addon label-danger">全文</span>
+                            <input id="input_ss" name="ss" type="text" class="form-control keyword" placeholder="请输入标题或正文中的关键词（至少两个字），多个词以空格隔开">
+                        </div>
+                        <div id="div_multi">
+                            <div class="row mb10">
+                                <div class="col-xs-5">
+                                    <div class="input-group">
+                                        <span class="input-group-addon label-danger">标题</span>
+                                        <input id="input_tm" name="tm" type="text" class="form-control keyword" placeholder="必含关键词..." autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 pl10">
+                                    <div class="input-group">
+                                        <input id="input_ts" name="ts" type="text" class="form-control keyword" placeholder="可含关键词..." autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="col-xs-3  pl10">
+                                    <div class="input-group">
+                                        <input id="input_tn" name="tn" type="text" class="form-control keyword" placeholder="不含关键词..." autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row  mb10">
+                                <div class="col-xs-5">
+                                    <div class="input-group">
+                                        <span class="input-group-addon label-danger">正文</span>
+                                        <input id="input_cm" name="cm" type="text" class="form-control keyword" placeholder=" 必含关键词..." autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 pl10">
+                                    <div class="input-group">
+                                        <input id="input_cs" name="cs" type="text" class="form-control keyword" placeholder="可含关键词..." autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="input-group">
+                                        <input id="input_cn" name="cn" type="text" class="form-control keyword" placeholder="不含关键词..." autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                        	<div class="col-xs-8">
+                        		<div class="input-group">
+                            		<span id="btn_selectPeriod" role="button" class="btn label-danger dropdown-toggle input-group-addon" data-toggle="dropdown">日期 <span class="caret"></span></span>
+		                            <ul id="lst_periods" class="dropdown-menu">
+		                                <li><a href="javascript:void(0)" class="date">最近一周</a></li>
+		                                <li><a href="javascript:void(0)" class="date">最近一月</a></li>
+		                                <li><a href="javascript:void(0)" class="date">最近三月</a></li>
+		                                <li><a href="javascript:void(0)" class="date">最近六月</a></li>
+		                                <li><a href="javascript:void(0)" class="date">最近一年</a></li>
+		                                <li><a href="javascript:void(0)" class="date">最近三年</a></li>
+		                                <li><a href="javascript:void(0)" class="date">2016年</a></li>
+		                                <li><a href="javascript:void(0)" class="date">2015年</a></li>
+		                                <li><a href="javascript:void(0)" class="date">2014年</a></li>
+		                                <li><a href="javascript:void(0)" class="date">2013年</a></li>
+		                                <li><a href="javascript:void(0)" class="date">全部时间</a></li>
+                            		</ul>
+	                            	<input id="input_ds" name="ds" type="text" class="form-control">
+	                           	 	<span class="input-group-addon">~</span>
+	                            	<input id="input_de" name="de" type="text" class="form-control">
+                        		</div>
+                        	</div>	
+                        	<div class="col-xs-4">
+                            	<div class="input-group extend">
+                            		<label for="input_syn">
+                            			<input id="input_syn" role="checkbox" name="syn" value="1" class="checkbox" type="checkbox"><span>同义扩展</span>
+                            		</label>
+                            	</div>
+                        	</div>
+                        </div>
+					</div>
+					<div class="col-xs-2">
+						<div class="mb10">
+							<button id="btn_search" class="btn btn-danger col-xs-12" type="submit" ><span class="glyphicon glyphicon-search"></span></button>
+						</div>
+						<div class="row">
+                            <div class="col-xs-12 btn-group" role="group">
+                                <a id="btn_expandMulti" class="btn btn-default filter-button" role="button">高级</a>
+                                <a id="btn_reset" class="btn btn-default filter-button" role="button">重置</a>
+                            </div>
+                        </div>
+					</div>
+				</form>
+				<div class="news-content">
+					<ul id="myTab" class="nav nav-tabs">
+					   <li class="active"><a href="#news1" data-toggle="tab">
+					      证监会要闻</a>
+					   </li>
+					   <li><a href="#news2" data-toggle="tab">证监会新闻发布会</a></li>
+					   <li><a href="#news3" data-toggle="tab">上交所要闻</a></li>
+					   <li><a href="#news4" data-toggle="tab">上交所新闻发布会</a></li>
+					   <li><a href="#news5" data-toggle="tab">深交所要闻</a></li>
+					</ul>
+					<div id="myTabContent" class="tab-content">
+					   <div class="tab-pane fade in active" id="news1">
+					      <ul class="news-info">
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      </ul>
+					   </div>
+					   <div class="tab-pane fade" id="news2">
+					      <ul class="news-info">
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      </ul>
+					   </div>
+					   <div class="tab-pane fade" id="news3">
+					      <ul class="news-info">
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      </ul>
+					   </div>
+					   <div class="tab-pane fade" id="news4">
+					      <ul class="news-info">
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      </ul>
+					   </div>
+					    <div class="tab-pane fade" id="news5">
+					      <ul class="news-info">
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      	<li><a href="#">内容内容</a><span class="time">2017-2-10</span></li>
+					      </ul>
+					   </div>
+					</div>
+				</div>
+			</div>
+			<div class="content-right">
+				<div id="div_stat" class="container div_stat">
+	                <!--Filters-->
+	                <div class="row">
+	                    <div class="panel panel-default trs">
+	                        <div class="panel-heading" role="tab">
+	                            <span>过滤条件</span>
+	                            <div class="btn-group pull-right" role="group">
+	                                <a id="btn_applyFilters" href="javascript:void(0)" class="btn btn-danger disabled" role="button">应用</a>
+	                                <a id="btn_resetFilters" class="btn btn-default disabled" role="button">清除</a>
+	                            </div>
+	                        </div>
+	                        <div id="div_filter" class="panel-body filter-container"></div>
+	                    </div>
+	                </div>
+                	<!-- Nav tabs -->
+                	<div class="row">
+                    	<ul class="nav nav-tabs" role="tablist">
+                        	<li role="presentation" class="active">
+                        		<a class="tablist" id="tab6" href="javascript:void(0)" data-target="#div_noticeStat" data-toggle="tab" role="tab" title="匹配公告的类型分布">类型</a>
+                        	</li>
+                        	<li role="presentation">
+                        		<a class="tablist" id="tab1" href="javascript:void(0)" data-target="#div_industryStat" data-toggle="tab" role="tab" title="匹配公告所属公司的行业分布">行业</a>
+                        	</li>
+                        	<li role="presentation">
+                        		<a class="tablist" id="tab2" href="javascript:void(0)" data-target="#div_locationStat" data-toggle="tab" role="tab" title="匹配公告所属公司的地域分布">地域</a>
+                        	</li>
+                        	<li role="presentation">
+                        		<a class="tablist" id="tab3" href="javascript:void(0)" data-target="#div_companyStat" data-toggle="tab" role="tab" title="匹配公告所属的公司分布">公司</a>
+                        	</li>
+                        	<li role="presentation">
+                        		<a class="tablist" id="tab4" href="javascript:void(0)" data-target="#div_lawStat" data-toggle="tab" role="tab" title="匹配公告中出现的法规分布">法规</a>
+                        	</li>
+                    	</ul>
+                    	<!-- Tab panels -->
+                    	<div class="tab-content">
+	                        <div role="tabpanel" class="tab-pane fade in active" id="div_noticeStat">
+	                            <div class="panel panel-default filter-list trs">
+	                                <div class="pbody" role="tabpanel">
+		                                <a href="javascript:void(0)" class="list-group-item filter">
+		                                	<span class="badge">99999+</span>其他重大事项
+		                                </a>
+		                                <a href="javascript:void(0)" class="list-group-item filter">
+		                                	<span class="badge">99999+</span>交易
+		                                </a>
+		                                <a href="javascript:void(0)" class="list-group-item filter">
+		                                	<span class="badge">99999+</span>股东大会
+		                                </a>
+		                                <a href="javascript:void(0)" class="list-group-item filter">
+		                                	<span class="badge">99999+</span>上市公司制度
+		                                </a>
+		                                <a href="javascript:void(0)" class="list-group-item filter">
+		                               		<span class="badge">99999+</span>中介机构报告
+		                               	</a>
+		                                <a href="javascript:void(0)" class="list-group-item filter">
+		                                	<span class="badge">99999+</span>权益及限制出售股份
+		                                </a>
+		                                <a href="javascript:void(0)" class="list-group-item filter">
+		                                	<span class="badge">86917</span>澄清、风险、业绩预告
+		                                </a>
+		                                <a href="javascript:void(0)" class="list-group-item filter">
+		                                	<span class="badge">61662</span>半年度报告
+		                                </a>
+		                                <a href="javascript:void(0)" class="list-group-item filter">
+		                                	<span class="badge">60420</span>董事会公告
+		                                </a>
+		                                <a href="javascript:void(0)" class="list-group-item filter">
+		                                	<span class="badge">59500</span>年度报告
+		                                </a>
+	                                </div>
+	                                <div class="panel-footer trsfooter">
+	                                    <div>
+	                                        <ul class="pagination">
+	                                        	<li>
+	                                        		<a href="javascript:void(0)">1</a>
+	                                        	</li>
+	                                        	<li>
+	                                        		<a href="javascript:void(0)">2</a>
+	                                        	</li>
+	                                        	<li>
+	                                        		<a href="javascript:void(0)">3</a>
+	                                        	</li>
+	                                        </ul>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div role="tabpanel" class="tab-pane fade" id="div_industryStat">
+	                            <div class="panel panel-default filter-list trs">
+	                                <div class="pbody" role="tabpanel" style="max-height: 500px; max-width: 290px; overflow-x: hidden; overflow-y: auto"></div>
+	                                <div class="panel-footer trsfooter">
+	                                    <div style="text-align: center">
+	                                        <ul class="pagination" style="margin: 0"></ul>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div role="tabpanel" class="tab-pane fade" id="div_locationStat">
+	                            <div class="panel panel-default filter-list trs">
+	                                <div class="pbody" role="tabpanel"></div>
+	                                <div class="panel-footer trsfooter">
+	                                    <div style="text-align: center">
+	                                        <ul class="pagination" style="margin: 0"></ul>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div role="tabpanel" class="tab-pane fade" id="div_companyStat">
+	                            <div class="panel panel-default filter-list trs">
+	                                <div class="pbody" role="tabpanel"></div>
+	                                <div class="panel-footer trsfooter">
+	                                    <div style="text-align: center">
+	                                        <ul class="pagination" style="margin: 0"></ul>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div role="tabpanel" class="tab-pane fade" id="div_lawStat">
+	                            <div class="panel panel-default filter-list trs">
+	                                <div class="pbody" role="tabpanel" style="max-width: 290px;"></div>
+	                                <div class="panel-footer trsfooter">
+	                                    <div style="text-align: center">
+	                                        <ul class="pagination" style="margin: 0"></ul>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+                    	</div>
+                	</div>
+            	</div>
+			</div>
+		</div>
+	</div>
+<!-- 主题内容End -->
+</section>
+<!-- 底部Start -->
+<!-- 底部End -->
+<script type="text/javascript">
+	//折叠效果
+	$(function(){
+		$('.item .collapse-title').click(function(){
+			$(this).parent().find('.item-content').toggle();
+			$(this).parent().siblings().find('.item-content').hide();
+		});
+		$('#toggle-aside').click(function(){
+			$('.content').toggleClass('test');
+			$('.content-wrap').toggleClass('test');
+			$('.navbar-header').toggleClass('toggle');
+		})
+		$('.collapse-title').mouseenter(function(){
+			if($('.content-wrap').hasClass('test')){
+				$(this).parent().find('.item-content').show();
+				$(this).parent().siblings().find('.item-content').hide();
+			}
+		}).mouseleave(function(){
+			if($('.content-wrap').hasClass('test')){
+				$('.item-content').hide();
+			}
+		});		
+	})
+</script>
+</body>
+</html>
